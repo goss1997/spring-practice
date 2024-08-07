@@ -12,7 +12,13 @@ public interface ProductService {
 	
 	//입고처리
 	int insert_in(ProductVo vo) throws Exception;
-	
+
+	//입고취소
+	int delete_in(int idx) throws Exception;
+
 	//출고처리
 	int insert_out(ProductVo vo) throws Exception;
+
+	//출고취소
+	int delete_out(int idx) throws Exception;
 }

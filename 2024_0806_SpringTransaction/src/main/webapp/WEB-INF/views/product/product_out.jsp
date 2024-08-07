@@ -2,12 +2,24 @@
     pageEncoding="UTF-8"%>
     
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+	<script type="text/javascript">
+
+		function delete_out(idx){
+
+			if(confirm("출고를 취소하시겠습니까?")==false) return;
+
+			location.href="delete_out.do?idx=" + idx;
+		}
+
+
+	</script>
 </head>
 <body>
 
@@ -29,7 +41,10 @@
 		<tr>
 			<td>${ vo.name }</td>
 			<td>${ vo.cnt }</td>
-			<td>${ vo.regdate }</td>
+			<td>
+					${ fn:substring(vo.regdate,0,10) }
+						<input type="button"  value="x" onclick="delete_out('${vo.idx}');">
+			</td>
 		</tr>
 	</c:forEach>
 	

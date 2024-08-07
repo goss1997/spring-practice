@@ -10,6 +10,7 @@ public class MyExcepHndlr extends Exception {
 		Signature sign = thisJoinPoint.getSignature();
 		System.out.println("---[Exception]" + sign.getDeclaringTypeName() +":"+sign.getName() + "---");
 		//System.out.println("          --[내용]:" + exception.getMessage());
+		exception.printStackTrace();
 		
 		
 	}

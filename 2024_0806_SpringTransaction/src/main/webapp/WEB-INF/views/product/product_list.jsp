@@ -14,17 +14,30 @@
 <script type="text/javascript">
  window.onload=function(){
       
-	 if("${ param.error eq 'remain_not' }"=='true')
-	 {
-		 alert('재고목록에 출고할\n상품이 없습니다');
-	 }
-	
-	 if("${ param.error eq 'remain_lack' }"=='true')
-	 {
-		 alert('출고할 상품수량이 부족합니다');
-	 }
+    setTimeout(showMessage, 100);
 	     
  };
+
+ function showMessage() {
+     if("${ param.error eq 'remain_not' }"=='true')
+     {
+         alert('재고목록에 출고할\n상품이 없습니다');
+     }
+
+     if("${ param.error eq 'remain_lack' }"=='true')
+     {
+         alert('출고할 상품수량이 부족합니다');
+     }
+     if("${ param.error eq 'delete_not' }"=='true')
+     {
+         alert('취소가 불가능한 상품입니다.');
+     }
+     if("${ param.error eq 'diff' }"=='true')
+     {
+         alert('재고 수량이 맞지 않습니다.');
+     }
+
+ }
 </script>
 
 
